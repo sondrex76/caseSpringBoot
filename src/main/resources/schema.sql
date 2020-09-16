@@ -4,9 +4,9 @@ CREATE TABLE employee
 
  characterName varchar(100) NOT NULL,
 
-  characterId int(11) NOT NULL ,
+  characterId BIGINT NOT NULL,
 
- characterExperienceValue int(100) DEFAULT NULL,
+ characterExperienceValue BIGINT DEFAULT 0,
 
  characterDetails varchar(1000) DEFAULT NULL,
 

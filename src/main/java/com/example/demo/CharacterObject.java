@@ -10,8 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 
-// Makes it crash, one of the variables may be of the wrong type
-
+// Types are likely wrong compared to the database, needs to be fixed
 @Entity
 @Table(name = "employee")
 public class CharacterObject implements Serializable {
@@ -25,7 +24,7 @@ public class CharacterObject implements Serializable {
 	private String characterName;
 
 	@Column(name = "characterExperienceValue")
-	private String characterExperienceValue;
+	private long characterExperienceValue;
 
 	@Column(name = "characterDetails")
 	private String characterDetails;
