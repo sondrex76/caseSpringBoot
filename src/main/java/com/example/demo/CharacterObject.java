@@ -17,7 +17,7 @@ public class CharacterObject implements Serializable {
 	private static final long serialVersionUID = -100L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "characterName")
+	@Column(name = "characterId")
 	private long characterId;
 
 	@Column(name = "characterName")
