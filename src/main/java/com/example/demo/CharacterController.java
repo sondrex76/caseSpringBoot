@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class CharacterController {
 	@Controller
 	public class CharactersController {
-		@GetMapping("/characters/")
+		@GetMapping("/characters/{id}")
 		public String characters(Model model) {
 			return "openCharacter";
 		}

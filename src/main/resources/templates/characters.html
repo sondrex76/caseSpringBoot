@@ -5,18 +5,16 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
+	<button onclick="window.location.href='http://localhost:8080/characters/new';">
+      Add new character
+    </button>
 	<table>
 		<thead> 
 			<th>ID
-			<\th>
 			<th>Name
-			<\th>
 			<th>Experience
-			<\th>
 			<th>Details
-			<\th>
 			<th>Picture
-			<\th>
 		<tbody>		
 			<tr th:if="${characterList.empty}">
 	            <td colspan="2"> No characters could be found in the database at this time</td>
@@ -28,6 +26,5 @@
 	            <td><span th:text="${character.characterDetails}"> Details </span></td>
 	            <td><span th:text="${character.characterPicture}"> Picture </span></td>
 	        </tr>
-	<a href="http://localhost:8080/characters/new">Add new character<\a>
 </body>
 </html>

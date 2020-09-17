@@ -5,7 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
 
 
 
@@ -16,12 +18,8 @@ public class CharactersController {
 	
 	@GetMapping("/characters")
 	public String characters(Model model) {
-		// TODO: Extract data from database
-		// TODO: Send data to characters.html as an array
-		// TODO: Make characters.html display all objects in array
-		
+		// TODO: Fix form (make it not crash)
 		// TODO: Make characters.html display character objects clickable and lead to openCharacter.html
-		// TODO: Make button leading to template form for adding new object to database
 		// TODO: Allow image to be shown when character is open
 		
 		
@@ -30,24 +28,20 @@ public class CharactersController {
 		return "characters";
 	}
 	
+	// Localized within the other controller because it needs access to repository and making it static is not an option
+	@Controller
+	public class CharacterFormController {
+		@GetMapping("/characters/new")
+		public String characters(Model model) {
+			return "newCharacterForm";
+		}
 
-@Controller
-public class CharacterFormController {
-	@GetMapping("/characters/new")
-	public String characters(Model model) {
-		CharacterCreationDto charactersForm = new CharacterCreationDto();
-		charactersForm.addCharacter(new CharacterObject());
-		
-		model.addAttribute("form", charactersForm);
-		return "newCharacterForm";
+		@RequestMapping(value = "/characters/new", method = RequestMethod.POST)
+		public String saveCharacters(@ModelAttribute CharacterObject characterObject, Model model) {
+			repository.save(characterObject);
+		 
+		    model.addAttribute("characterList", repository.findAll());
+		    return "redirect:/characters";
+		}
 	}
-	
-	@PostMapping("/save")
-	public String saveBooks(@ModelAttribute CharacterCreationDto form, Model model) {
-		repository.saveAll(form.getCharacters());
-	 
-	    model.addAttribute("books", repository.findAll());
-	    return "redirect:/books/all";
-	}
-}
 }
