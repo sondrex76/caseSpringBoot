@@ -19,7 +19,7 @@
 			<tr th:if="${characterList.empty}">
 	            <td colspan="2"> No characters could be found in the database at this time</td>
 	        </tr>
-			<tr th:each="character : ${books}">
+			<tr th:each="character : ${character}">
 	            <td><span th:text="${character.characterId}"> ID </span></td>
 	            <td><span th:text="${character.characterName}"> Name </span></td>
 	            <td><span th:text="${character.characterExperienceValue}"> Experience </span></td>
@@ -28,9 +28,5 @@
 	        </tr>
 		<\tbody>
 	<\table>
-	
-	
-	<p th:each="characterList"><\p>
-	
 </body>
 </html>
