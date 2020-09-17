@@ -5,11 +5,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<form action="#" th:action="@{/characters/new}" th:object="${characterObject}" method="post">
-		<p>Name: <input type="text" th:field="*{characterName}" /><\p>
-		<p>Experience: <input type="number" min="0" th:field="*{characterExperienceValue}" /><\p>
-		<p>Details: <input type="text" th:field="*{characterDetails}" /><\p>
-		<p>Picture link: <input type="text" th:field="*{characterPicture}" /><\p>
+	<form action="#" th:action="@{/characters/new}" th:object="${character}" method="post">
+		<p>Name: <input type="text" th:field="*{name}" /><\p>
+		<p>Experience: <input type="number" min="0" th:field="*{experience}" /><\p>
+		<p>Details: <input type="text" th:field="*{details}" /><\p>
+		<p>Picture link: <input type="text" th:field="*{picture}" /><\p>
 		<input type="submit" id="submitButton" th:value="Submit" />
 	</form>
 <\body>

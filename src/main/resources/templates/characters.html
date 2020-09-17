@@ -20,11 +20,11 @@
 	            <td colspan="2"> No characters could be found in the database at this time</td>
 	        </tr>
 			<tr th:each="character : ${character}">
-	            <td><span th:text="${character.characterId}"> ID </span></td>
-	            <td><span th:text="${character.characterName}"> Name </span></td>
-	            <td><span th:text="${character.characterExperienceValue}"> Experience </span></td>
-	            <td><span th:text="${character.characterDetails}"> Details </span></td>
-	            <td><span th:text="${character.characterPicture}"> Picture </span></td>
+	            <td><span th:text="${character.id}"> ID </span></td>
+	            <td><span th:text="${character.name}"> Name </span></td>
+	            <td><span th:text="${character.experience}"> Experience </span></td>
+	            <td><span th:text="${character.details}"> Details </span></td>
+	            <td><span th:text="${character.picture}"> Picture </span></td>
 	        </tr>
 </body>
 </html>

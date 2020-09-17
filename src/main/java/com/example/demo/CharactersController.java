@@ -32,23 +32,13 @@ public class CharactersController {
 	public class CharacterFormController {
 		@GetMapping("/characters/new")
 		public String characters(Model model) {
-			model.addAttribute("characterObject", new CharacterObject());
+			model.addAttribute("characterObject", new Character());
 			
 			return "newCharacterForm";
 		}
 
 		@PostMapping(value = "/characters/new")
-		public String saveCharacters(@ModelAttribute CharacterObject characterObject, Model model) {
-			System.out.println("Method 1");
-			
-			
-			// CharacterObject newObject = new CharacterObject(characterObject[5], characterObject[8], characterObject[7], characterObject[6], characterObject[10]);
-			
-			// TEMP, for testing only
-			// CharacterObject newObject = new CharacterObject(8, "name", 12, "Description", "Image link");
-			
-			// NOTE: characterObject has twice the number of values it should have which casues the issue, I do not know why
-			
+		public String saveCharacters(@ModelAttribute Character characterObject, Model model) {
 			repository.save(characterObject);
 		 	
 		    model.addAttribute("characterList", repository.findAll());

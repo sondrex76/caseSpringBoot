@@ -1,9 +1,9 @@
 DROP TABLE IF EXISTS employee;
 CREATE TABLE employee(
- characterName varchar(100) NOT NULL,
-  characterId BIGINT NOT NULL,
- characterExperienceValue BIGINT DEFAULT 0,
- characterDetails varchar(1000) DEFAULT NULL,
- characterPicture varchar(1000) DEFAULT NULL,
+ name varchar(100) NOT NULL,
+  id BIGINT NOT NULL,
+ experience BIGINT DEFAULT 0,
+ details varchar(1000) DEFAULT NULL,
+ picture varchar(1000) DEFAULT NULL,
  PRIMARY KEY (characterId)
 );

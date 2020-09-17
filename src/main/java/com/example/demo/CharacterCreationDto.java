@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CharacterCreationDto {
-	private List<CharacterObject> characters = new ArrayList<>();
+	private List<Character> characters = new ArrayList<>();
 	
-    public void addCharacter(CharacterObject character) {
+    public void addCharacter(Character character) {
         this.characters.add(character);
     }
     
-    public List<CharacterObject> getCharacters() {
+    public List<Character> getCharacters() {
     	return this.characters;
     }
 }
