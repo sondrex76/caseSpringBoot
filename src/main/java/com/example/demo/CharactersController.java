@@ -17,7 +17,7 @@ public class CharactersController {
 	
 	@GetMapping("/characters")
 	public String characters(Model model) {
-		// TODO: Fix form (make it not crash)
+		// TODO: 
 		// TODO: Make characters.html display character objects clickable and lead to openCharacter.html
 		// TODO: Allow image to be shown when character is open
 		
@@ -32,7 +32,7 @@ public class CharactersController {
 	public class CharacterFormController {
 		@GetMapping("/characters/new")
 		public String characters(Model model) {
-			model.addAttribute("characterObject", new Character());
+			model.addAttribute("character", new Character());
 			
 			return "newCharacterForm";
 		}
@@ -42,6 +42,7 @@ public class CharactersController {
 			repository.save(characterObject);
 		 	
 		    model.addAttribute("characterList", repository.findAll());
+		    
 		    return "redirect:/characters";
 		}
 	}
