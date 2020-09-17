@@ -5,7 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 
 
@@ -25,8 +27,17 @@ public class CharactersController {
 		
 		return "characters";
 	}
+
+	@Controller
+	public class OpenCharacterController {
+		@RequestMapping("/characters/{id}")
+		public String openCharacter(@PathVariable("id") long id, Model model) {
+		    model.addAttribute("character", repository.getOne(id));
+		    
+		    return "openCharacter";
+		}
+	}
 	
-	// Localized within the other controller because it needs access to repository and making it static is not an option
 	@Controller
 	public class CharacterFormController {
 		@GetMapping("/characters/new")
@@ -40,8 +51,6 @@ public class CharactersController {
 		public String saveCharacters(@ModelAttribute Character characterObject, Model model) {
 			repository.save(characterObject);
 
-			System.out.println(characterObject.getId());
-		 	
 		    model.addAttribute("characterList", repository.findAll());
 		    
 		    return "redirect:/characters";

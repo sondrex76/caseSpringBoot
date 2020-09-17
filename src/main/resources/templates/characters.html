@@ -17,8 +17,9 @@
 	            <td colspan="2"> No characters could be found in the database at this time</td>
 	        </tr>
 			<tr th:each="character : ${characterList}">
-	            <td><span th:text="${character.id}"> ID </span></td>
+	            <td><a th:href="@{/characters/${character.id}}" span th:text="${character.id}"> ID </span></td>
 	            <td><span th:text="${character.name}"> Name </span></td>
 	        </tr>
 </body>
 </html>
+
