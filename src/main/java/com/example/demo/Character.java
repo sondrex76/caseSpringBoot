@@ -43,6 +43,10 @@ public class Character implements Serializable {
 
 	//Setters, getters and constructors
 	
+	public long getId() {
+		return id;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -57,6 +61,10 @@ public class Character implements Serializable {
 	
 	public String getPicture() {
 		return picture;
+	}
+	
+	public void setId(long characterId) {
+		this.id = characterId;
 	}
 	
 	public void setName(String characterName) {

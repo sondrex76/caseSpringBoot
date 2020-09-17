@@ -40,6 +40,8 @@ public class CharactersController {
 		@PostMapping(value = "/characters/new")
 		public String saveCharacters(@ModelAttribute Character characterObject, Model model) {
 			repository.save(characterObject);
+
+			System.out.println(characterObject.getId());
 		 	
 		    model.addAttribute("characterList", repository.findAll());
 		    
