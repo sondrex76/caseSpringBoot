@@ -31,10 +31,10 @@ public class CharactersController {
 	// Localized within the other controller because it needs access to repository and making it static is not an option
 	@Controller
 	public class CharacterFormController {
-		@GetMapping("/characters/new")
+		/*@GetMapping("/characters/new")
 		public String characters(Model model) {
 			return "newCharacterForm";
-		}
+		}*/
 
 		@RequestMapping(value = "/characters/new", method = RequestMethod.POST)
 		public String saveCharacters(@ModelAttribute CharacterObject characterObject, Model model) {

@@ -1,6 +1,5 @@
-<form action="#" th:action="@{/characters/new}" th:object="${character}" method="post">
+<form action="#" th:action="@{/characters/new}" th:object="${characterObject}" method="post">
 	<fieldset>
-		<input type="submit" id="submitButton" th:value="Submit">
 		<table border="1">
 			<tr>
 				<td><label th:text="Name"> </td>
@@ -19,5 +18,6 @@
 				<td><input type="text" th:field="*{characterPicture}"><\td>
 			</tr>
 		</table>
+		<input type="submit" id="submitButton" th:value="Submit">
 	</fieldset>
 </form>
