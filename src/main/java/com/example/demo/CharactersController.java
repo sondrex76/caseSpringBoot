@@ -5,8 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.PostMapping;
 
 
 
@@ -31,12 +30,14 @@ public class CharactersController {
 	// Localized within the other controller because it needs access to repository and making it static is not an option
 	@Controller
 	public class CharacterFormController {
-		/*@GetMapping("/characters/new")
+		@GetMapping("/characters/new")
 		public String characters(Model model) {
+			model.addAttribute("characterObject", new CharacterObject());
+			
 			return "newCharacterForm";
-		}*/
+		}
 
-		@RequestMapping(value = "/characters/new", method = RequestMethod.POST)
+		@PostMapping(value = "/characters/new")
 		public String saveCharacters(@ModelAttribute CharacterObject characterObject, Model model) {
 			repository.save(characterObject);
 		 

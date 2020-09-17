@@ -1,23 +1,31 @@
-<form action="#" th:action="@{/characters/new}" th:object="${characterObject}" method="post">
-	<fieldset>
-		<table border="1">
-			<tr>
-				<td><label th:text="Name"> </td>
-				<td><input type="text" th:field="*{characterName}"><\td>
-			</tr>
-			<tr>
-				<td><label th:text="Experience value"> </td>
-				<td><input type="number" min="0" th:field="*{characterExperienceValue}"><\td>
-			</tr>
-			<tr>
-				<td><label th:text="Details"> </td>
-				<td><input type="text" th:field="*{characterDetails}"><\td>
-			</tr>
-			<tr>
-				<td><label th:text="Picture link"> </td>
-				<td><input type="text" th:field="*{characterPicture}"><\td>
-			</tr>
-		</table>
-		<input type="submit" id="submitButton" th:value="Submit">
-	</fieldset>
-</form>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Character form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<form action="#" th:action="@{/characters/new}" th:object="${characterObject}" method="post">
+		<fieldset>
+			<table border="1">
+				<tr>
+					<td><label th:text="Name"> </td>
+					<td><input type="text" th:field="*{characterName}"><\td>
+				</tr>
+				<tr>
+					<td><label th:text="Experience value"> </td>
+					<td><input type="number" min="0" th:field="*{characterExperienceValue}"><\td>
+				</tr>
+				<tr>
+					<td><label th:text="Details"> </td>
+					<td><input type="text" th:field="*{characterDetails}"><\td>
+				</tr>
+				<tr>
+					<td><label th:text="Picture link"> </td>
+					<td><input type="text" th:field="*{characterPicture}"><\td>
+				</tr>
+			</table>
+			<input type="submit" id="submitButton" th:value="Submit">
+		</fieldset>
+	</form>
+<\body>
