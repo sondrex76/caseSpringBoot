@@ -9,7 +9,7 @@
     <p th:text="'ID: ' + ${character.id}" />
     <p th:text="'Experience: ' + ${character.experience}" />
     <p th:text="'Details: ' + ${character.details}" />
-	<img src="${character.picture}">
+	<img src="@{{id}(id=${character.picture})}">
 </body>
 </html>
 
