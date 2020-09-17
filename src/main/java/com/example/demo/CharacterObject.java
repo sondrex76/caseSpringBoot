@@ -14,6 +14,15 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "employee")
 public class CharacterObject implements Serializable {
+	public CharacterObject(long characterId, String characterName, long characterExperienceValue, String characterDetails, String characterPicture) {
+		this.characterId = characterId;
+		this.characterName = characterName;
+		this.characterExperienceValue= characterExperienceValue;
+		this.characterDetails = characterDetails;
+		this.characterPicture = characterPicture;		
+	}
+	public CharacterObject() {}
+	
 	private static final long serialVersionUID = -100L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
