@@ -17,7 +17,6 @@ public class CharactersController {
 	
 	@GetMapping("/characters")
 	public String characters(Model model) {
-		// TODO: 
 		// TODO: Make characters.html display character objects clickable and lead to openCharacter.html
 		// TODO: Allow image to be shown when character is open
 		

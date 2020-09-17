@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title text="${characterName}"></title>
+    <title text="${character.name}"></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-    <p th:text="'ID: ' + ${characterId}" />
-    <p th:text="'Experience: ' + ${characterExperienceValue}" />
-    <p th:text="'Details: ' + ${characterExperienceValue}" />
-	<a href="${characterPicture}"><\a>
+    <p th:text="'ID: ' + ${character.id}" />
+    <p th:text="'Experience: ' + ${character.experience}" />
+    <p th:text="'Details: ' + ${character.details}" />
+	<img src="${character.picture}">
 </body>
 </html>
 
