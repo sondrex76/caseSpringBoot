@@ -4,13 +4,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 
 
 @Controller
 public class CharactersController {
 	@Autowired
-	CharacterRepository repository;
+	public CharacterRepository repository;
 	
 	@GetMapping("/characters")
 	public String characters(Model model) {
@@ -27,4 +29,25 @@ public class CharactersController {
 		
 		return "characters";
 	}
+	
+
+@Controller
+public class CharacterFormController {
+	@GetMapping("/characters/new")
+	public String characters(Model model) {
+		CharacterCreationDto charactersForm = new CharacterCreationDto();
+		charactersForm.addCharacter(new CharacterObject());
+		
+		model.addAttribute("form", charactersForm);
+		return "newCharacterForm";
+	}
+	
+	@PostMapping("/save")
+	public String saveBooks(@ModelAttribute CharacterCreationDto form, Model model) {
+		repository.saveAll(form.getCharacters());
+	 
+	    model.addAttribute("books", repository.findAll());
+	    return "redirect:/books/all";
+	}
+}
 }

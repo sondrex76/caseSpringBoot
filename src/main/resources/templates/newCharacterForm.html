@@ -1,0 +1,24 @@
+<form action="#" th:action="@{/characters/new}" th:object="${form}"
+	  method="post">
+	    <fieldset>
+	        <input type="submit" id="submitButton" th:value="Submit">
+	        <table>
+	            <thead>
+	                <tr>
+	                    <th> Name</th>
+	                    <th> Experience value</th>
+	                    <th> Details</th>
+	                    <th> Picture link</th>
+	                </tr>
+	            </thead>
+	            <tbody>
+	                <tr th:each="character, itemStat : *{characters}">
+	                    <td><input th:field="*{characters[__${itemStat.index}__].characterName}" /></td>
+	                    <td><input th:field="*{characters[__${itemStat.index}__].characterExperienceValue}" type="number" min="0" /></td>
+	                    <td><input th:field="*{characters[__${itemStat.index}__].characterDetails}"  /></td>
+	                    <td><input th:field="*{characters[__${itemStat.index}__].characterPicture}"  /></td>
+	                </tr>
+	            </tbody>
+	        </table>
+	    </fieldset>
+	</form>

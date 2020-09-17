@@ -9,7 +9,7 @@ public class CharacterController {
 	public class CharactersController {
 		@GetMapping("/characters/")
 		public String characters(Model model) {
-			return "characters";
+			return "openCharacter";
 		}
 	}
 
