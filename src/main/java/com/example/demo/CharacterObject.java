@@ -33,4 +33,36 @@ public class CharacterObject implements Serializable {
 	private String characterPicture;
 
 	//Setters, getters and constructors
+	
+	public String getCharacterName() {
+		return characterName;
+	}
+	
+	public long getCharacterExperienceValue() {
+		return characterExperienceValue;
+	}
+	
+	public String getCharacterDetails() {
+		return characterDetails;
+	}
+	
+	public String getCharacterPicture() {
+		return characterPicture;
+	}
+	
+	public void setCharacterName(String characterName) {
+		this.characterName = characterName;
+	}
+	
+	public void setCharacterExperienceValue(long characterExperienceValue) {
+		this.characterExperienceValue= characterExperienceValue ;
+	}
+	
+	public void setCharacterDetails(String characterDetails) {
+		this.characterDetails = characterDetails;
+	}
+	
+	public void setCharacterPicture(String characterPicture) {
+		this.characterPicture = characterPicture;
+	}
 }

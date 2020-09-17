@@ -6,26 +6,10 @@
 </head>
 <body>
 	<form action="#" th:action="@{/characters/new}" th:object="${characterObject}" method="post">
-		<fieldset>
-			<table border="1">
-				<tr>
-					<td><label th:text="Name"> </td>
-					<td><input type="text" th:field="*{characterName}"><\td>
-				</tr>
-				<tr>
-					<td><label th:text="Experience value"> </td>
-					<td><input type="number" min="0" th:field="*{characterExperienceValue}"><\td>
-				</tr>
-				<tr>
-					<td><label th:text="Details"> </td>
-					<td><input type="text" th:field="*{characterDetails}"><\td>
-				</tr>
-				<tr>
-					<td><label th:text="Picture link"> </td>
-					<td><input type="text" th:field="*{characterPicture}"><\td>
-				</tr>
-			</table>
-			<input type="submit" id="submitButton" th:value="Submit">
-		</fieldset>
+		<p>Name: <input type="text" th:field="*{characterName}" /><\p>
+		<p>Experience: <input type="number" min="0" th:field="*{characterExperienceValue}" /><\p>
+		<p>Details: <input type="text" th:field="*{characterDetails}" /><\p>
+		<p>Picture link: <input type="text" th:field="*{characterPicture}" /><\p>
+		<input type="submit" id="submitButton" th:value="Submit" />
 	</form>
 <\body>
